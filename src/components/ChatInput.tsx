@@ -41,7 +41,7 @@ export default function ChatInput({ onSend, disabled }: ChatInputProps) {
   };
 
   return (
-    <div className="flex gap-3 items-end p-4 border-t border-white/10 bg-black/30">
+    <div className="flex gap-3 items-end p-4 border-t-2 border-[#1a1a1a] bg-[#ffffff]">
       <textarea
         ref={textareaRef}
         value={input}
@@ -50,16 +50,16 @@ export default function ChatInput({ onSend, disabled }: ChatInputProps) {
           adjustTextareaHeight();
         }}
         onKeyDown={handleKeyPress}
-        placeholder="Ask me anything about The Beatles..."
+        placeholder="Ask about Revolver, The Beatles, or anything..."
         disabled={disabled}
         rows={1}
-        className="flex-1 resize-none rounded-2xl bg-white/5 border border-white/10 px-4 py-3 text-slate-100 placeholder:text-slate-500 focus:outline-none focus:border-lime-400 focus:ring-2 focus:ring-lime-400/20 disabled:opacity-50 disabled:cursor-not-allowed overflow-y-auto"
+        className="flex-1 resize-none rounded-lg bg-[#faf9f6] border-2 border-[#1a1a1a] px-4 py-3 text-[#1a1a1a] placeholder:text-[#8b7355] focus:outline-none focus:border-[#8b7355] focus:shadow-[0_0_0_2px_#8b7355] disabled:opacity-50 disabled:cursor-not-allowed overflow-y-auto font-medium"
         style={{ minHeight: "48px", maxHeight: "120px" }}
       />
       <button
         onClick={handleSend}
         disabled={disabled || !input.trim()}
-        className="rounded-full bg-lime-400 px-6 py-3 text-sm font-semibold text-slate-900 transition hover:bg-lime-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-lime-400"
+        className="rounded-lg bg-[#1a1a1a] px-6 py-3 text-sm font-bold text-[#f5f1e8] border-2 border-[#1a1a1a] shadow-[4px_4px_0px_0px_#8b7355] transition-all hover:shadow-[2px_2px_0px_0px_#8b7355] hover:translate-x-[2px] hover:translate-y-[2px] disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:shadow-[4px_4px_0px_0px_#8b7355] disabled:hover:translate-x-0 disabled:hover:translate-y-0 uppercase tracking-wide"
       >
         Send
       </button>

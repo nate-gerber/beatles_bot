@@ -12,18 +12,18 @@ export default function ChatMessage({ message }: ChatMessageProps) {
       className={`flex w-full ${isUser ? "justify-end" : "justify-start"}`}
     >
       <div
-        className={`max-w-[80%] sm:max-w-[70%] rounded-2xl px-4 py-3 ${
+        className={`max-w-[80%] sm:max-w-[70%] rounded-lg px-4 py-3 border-2 ${
           isUser
-            ? "bg-lime-400 text-slate-900"
-            : "bg-white/10 text-slate-100 border border-white/20"
+            ? "bg-[#1a1a1a] text-[#f5f1e8] border-[#1a1a1a] shadow-[4px_4px_0px_0px_#8b7355]"
+            : "bg-[#ffffff] text-[#1a1a1a] border-[#1a1a1a] shadow-[4px_4px_0px_0px_#1a1a1a]"
         }`}
       >
-        <p className="text-sm leading-relaxed whitespace-pre-wrap">
+        <p className={`text-sm leading-relaxed whitespace-pre-wrap ${isUser ? "font-medium" : ""}`}>
           {message.content}
         </p>
         <p
-          className={`text-xs mt-2 ${
-            isUser ? "text-slate-700" : "text-slate-400"
+          className={`text-xs mt-2 font-mono ${
+            isUser ? "text-[#8b7355]" : "text-[#8b7355]"
           }`}
         >
           {new Date(message.timestamp).toLocaleTimeString([], {
